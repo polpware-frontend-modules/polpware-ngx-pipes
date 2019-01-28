@@ -1,0 +1,21 @@
+{
+  "name": "@polpware/ngx-pipes",
+  "version": "7.0.0",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/polpware-ngx-pipes.umd.js",
+  "module": "fesm5/polpware-ngx-pipes.js",
+  "es2015": "fesm2015/polpware-ngx-pipes.js",
+  "esm5": "esm5/polpware-ngx-pipes.js",
+  "esm2015": "esm2015/polpware-ngx-pipes.js",
+  "fesm5": "fesm5/polpware-ngx-pipes.js",
+  "fesm2015": "fesm2015/polpware-ngx-pipes.js",
+  "typings": "polpware-ngx-pipes.d.ts",
+  "metadata": "polpware-ngx-pipes.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

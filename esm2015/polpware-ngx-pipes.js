@@ -1,0 +1,15 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+export { PolpwareNgxPipesModule } from './public_api';
+export { FileSizePipe as ɵd } from './lib/pipes/file-size.pipe';
+export { ShortenFullpathPipe as ɵc } from './lib/pipes/fullpath.pipe';
+export { ParentDirPipe as ɵf } from './lib/pipes/parent-dir.pipe';
+export { SegmentsPipe as ɵb } from './lib/pipes/segments.pipe';
+export { UnrollArrayPipe as ɵa } from './lib/pipes/unroll-array.pipe';
+export { UnzipObjectPipe as ɵe } from './lib/pipes/unzip-object.pipe';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG9scHdhcmUtbmd4LXBpcGVzLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQHBvbHB3YXJlL25neC1waXBlcy8iLCJzb3VyY2VzIjpbInBvbHB3YXJlLW5neC1waXBlcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBSUEsdUNBQWMsY0FBYyxDQUFDO0FBRTdCLE9BQU8sRUFBQyxZQUFZLElBQUksRUFBRSxFQUFDLE1BQU0sNEJBQTRCLENBQUM7QUFDOUQsT0FBTyxFQUFDLG1CQUFtQixJQUFJLEVBQUUsRUFBQyxNQUFNLDJCQUEyQixDQUFDO0FBQ3BFLE9BQU8sRUFBQyxhQUFhLElBQUksRUFBRSxFQUFDLE1BQU0sNkJBQTZCLENBQUM7QUFDaEUsT0FBTyxFQUFDLFlBQVksSUFBSSxFQUFFLEVBQUMsTUFBTSwyQkFBMkIsQ0FBQztBQUM3RCxPQUFPLEVBQUMsZUFBZSxJQUFJLEVBQUUsRUFBQyxNQUFNLCtCQUErQixDQUFDO0FBQ3BFLE9BQU8sRUFBQyxlQUFlLElBQUksRUFBRSxFQUFDLE1BQU0sK0JBQStCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEdlbmVyYXRlZCBidW5kbGUgaW5kZXguIERvIG5vdCBlZGl0LlxuICovXG5cbmV4cG9ydCAqIGZyb20gJy4vcHVibGljX2FwaSc7XG5cbmV4cG9ydCB7RmlsZVNpemVQaXBlIGFzIMm1ZH0gZnJvbSAnLi9saWIvcGlwZXMvZmlsZS1zaXplLnBpcGUnO1xuZXhwb3J0IHtTaG9ydGVuRnVsbHBhdGhQaXBlIGFzIMm1Y30gZnJvbSAnLi9saWIvcGlwZXMvZnVsbHBhdGgucGlwZSc7XG5leHBvcnQge1BhcmVudERpclBpcGUgYXMgybVmfSBmcm9tICcuL2xpYi9waXBlcy9wYXJlbnQtZGlyLnBpcGUnO1xuZXhwb3J0IHtTZWdtZW50c1BpcGUgYXMgybVifSBmcm9tICcuL2xpYi9waXBlcy9zZWdtZW50cy5waXBlJztcbmV4cG9ydCB7VW5yb2xsQXJyYXlQaXBlIGFzIMm1YX0gZnJvbSAnLi9saWIvcGlwZXMvdW5yb2xsLWFycmF5LnBpcGUnO1xuZXhwb3J0IHtVbnppcE9iamVjdFBpcGUgYXMgybVlfSBmcm9tICcuL2xpYi9waXBlcy91bnppcC1vYmplY3QucGlwZSc7Il19
