@@ -1,9 +1,12 @@
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 /*
  * Public API Surface of ngx-pipes
  */
-export { PolpwareNgxPipesModule } from "./lib/ngx-pipes.module";
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljX2FwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0Bwb2xwd2FyZS9uZ3gtcGlwZXMvIiwic291cmNlcyI6WyJwdWJsaWNfYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFJQSx1Q0FBYyx3QkFBd0IsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2Ygbmd4LXBpcGVzXG4gKi9cblxuZXhwb3J0ICogZnJvbSBcIi4vbGliL25neC1waXBlcy5tb2R1bGVcIjtcblxuIl19
+export * from "./lib/pipes/file-size.pipe";
+export * from "./lib/pipes/fullpath.pipe";
+export * from "./lib/pipes/parent-dir.pipe";
+export * from "./lib/pipes/safe-dom.pipe";
+export * from "./lib/pipes/segments.pipe";
+export * from "./lib/pipes/unroll-array.pipe";
+export * from "./lib/pipes/unzip-object.pipe";
+export * from "./lib/ngx-pipes.module";
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljX2FwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0Bwb2xwd2FyZS9uZ3gtcGlwZXMvIiwic291cmNlcyI6WyJwdWJsaWNfYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztHQUVHO0FBRUgsY0FBYyw0QkFBNEIsQ0FBQztBQUMzQyxjQUFjLDJCQUEyQixDQUFDO0FBQzFDLGNBQWMsNkJBQTZCLENBQUM7QUFDNUMsY0FBYywyQkFBMkIsQ0FBQztBQUMxQyxjQUFjLDJCQUEyQixDQUFDO0FBQzFDLGNBQWMsK0JBQStCLENBQUM7QUFDOUMsY0FBYywrQkFBK0IsQ0FBQztBQUM5QyxjQUFjLHdCQUF3QixDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLypcbiAqIFB1YmxpYyBBUEkgU3VyZmFjZSBvZiBuZ3gtcGlwZXNcbiAqL1xuXG5leHBvcnQgKiBmcm9tIFwiLi9saWIvcGlwZXMvZmlsZS1zaXplLnBpcGVcIjtcbmV4cG9ydCAqIGZyb20gXCIuL2xpYi9waXBlcy9mdWxscGF0aC5waXBlXCI7XG5leHBvcnQgKiBmcm9tIFwiLi9saWIvcGlwZXMvcGFyZW50LWRpci5waXBlXCI7XG5leHBvcnQgKiBmcm9tIFwiLi9saWIvcGlwZXMvc2FmZS1kb20ucGlwZVwiO1xuZXhwb3J0ICogZnJvbSBcIi4vbGliL3BpcGVzL3NlZ21lbnRzLnBpcGVcIjtcbmV4cG9ydCAqIGZyb20gXCIuL2xpYi9waXBlcy91bnJvbGwtYXJyYXkucGlwZVwiO1xuZXhwb3J0ICogZnJvbSBcIi4vbGliL3BpcGVzL3VuemlwLW9iamVjdC5waXBlXCI7XG5leHBvcnQgKiBmcm9tIFwiLi9saWIvbmd4LXBpcGVzLm1vZHVsZVwiO1xuXG4iXX0=

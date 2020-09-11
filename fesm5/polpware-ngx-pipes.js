@@ -1,182 +1,7 @@
+import { ɵɵdefinePipe, ɵsetClassMetadata, Pipe, ɵɵdirectiveInject, ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, NgModule } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { Pipe, NgModule } from '@angular/core';
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var UnrollArrayPipe = /** @class */ (function () {
-    function UnrollArrayPipe() {
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    UnrollArrayPipe.prototype.transform = /**
-     * @param {?} value
-     * @return {?}
-     */
-    function (value) {
-        /** @type {?} */
-        var len = value.length;
-        /** @type {?} */
-        var half = Math.floor(len / 2);
-        /** @type {?} */
-        var index = 0;
-        /** @type {?} */
-        var groups = [];
-        for (var i = 0; i < half; i++) {
-            groups.push({
-                first: value[index],
-                second: value[index + 1]
-            });
-            index += 2;
-        }
-        /** @type {?} */
-        var last = null;
-        if (index < len) {
-            last = value[index];
-        }
-        return {
-            pairs: groups,
-            last: last
-        };
-    };
-    UnrollArrayPipe.decorators = [
-        { type: Pipe, args: [{ name: 'unrollArray' },] }
-    ];
-    return UnrollArrayPipe;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/*
- * Transform a string into an array of segments.
- * Usage:
- *   path | segments
- * Example:
- *   {{ '\test\tt' |  segments:'\\' }}
- *   formats to: ['test', 'tt']
-*/
-var SegmentsPipe = /** @class */ (function () {
-    function SegmentsPipe() {
-    }
-    /**
-     * @param {?} path
-     * @param {?=} separator
-     * @return {?}
-     */
-    SegmentsPipe.prototype.transform = /**
-     * @param {?} path
-     * @param {?=} separator
-     * @return {?}
-     */
-    function (path, separator) {
-        if (separator === void 0) { separator = '\\'; }
-        if (!path) {
-            return [];
-        }
-        /** @type {?} */
-        var ss = path.split(separator);
-        ss = ss.filter(function (x) { return x.length > 0; });
-        /** @type {?} */
-        var len = ss.length;
-        /** @type {?} */
-        var pp = ss.map(function (y, index) {
-            return {
-                value: y,
-                id: index,
-                lastId: len - 1
-            };
-        });
-        return pp;
-    };
-    SegmentsPipe.decorators = [
-        { type: Pipe, args: [{ name: 'segments' },] }
-    ];
-    return SegmentsPipe;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var ShortenFullpathPipe = /** @class */ (function () {
-    function ShortenFullpathPipe() {
-    }
-    /**
-     * @private
-     * @param {?} value
-     * @param {?} left
-     * @param {?} right
-     * @return {?}
-     */
-    ShortenFullpathPipe.prototype.shortJustName = /**
-     * @private
-     * @param {?} value
-     * @param {?} left
-     * @param {?} right
-     * @return {?}
-     */
-    function (value, left, right) {
-        if (value.length <= left + right) {
-            return value;
-        }
-        /** @type {?} */
-        var index = value.lastIndexOf('.');
-        if (index === -1) {
-            // no extension
-            return value.substring(0, left) + '...' + value.substring(value.length - right);
-        }
-        // has extension
-        /** @type {?} */
-        var ext = value.substring(index);
-        if (ext.length >= left + right) {
-            return '...' + ext;
-        }
-        return value.substring(0, left + right - ext.length) + '...' + ext;
-    };
-    /**
-     * @param {?} value
-     * @param {?} maxlen
-     * @return {?}
-     */
-    ShortenFullpathPipe.prototype.transform = /**
-     * @param {?} value
-     * @param {?} maxlen
-     * @return {?}
-     */
-    function (value, maxlen) {
-        if (value.length <= maxlen) {
-            return value;
-        }
-        /** @type {?} */
-        var leftLen = Math.trunc(maxlen / 2);
-        /** @type {?} */
-        var rightLen = maxlen - leftLen;
-        /** @type {?} */
-        var index = value.lastIndexOf('\\');
-        if (index === -1) {
-            return this.shortJustName(value, leftLen, rightLen);
-        }
-        else {
-            /** @type {?} */
-            var r = this.shortJustName(value.substring(index + 1), leftLen, rightLen);
-            return '...\\' + r;
-        }
-    };
-    ShortenFullpathPipe.decorators = [
-        { type: Pipe, args: [{ name: 'shortenFullpath' },] }
-    ];
-    return ShortenFullpathPipe;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 /*
  * Convert bytes into largest possible unit.
  * Takes an precision argument that defaults to 2.
@@ -197,23 +22,12 @@ var FileSizePipe = /** @class */ (function () {
             'PB'
         ];
     }
-    /**
-     * @param {?=} bytes
-     * @param {?=} precision
-     * @return {?}
-     */
-    FileSizePipe.prototype.transform = /**
-     * @param {?=} bytes
-     * @param {?=} precision
-     * @return {?}
-     */
-    function (bytes, precision) {
+    FileSizePipe.prototype.transform = function (bytes, precision) {
         if (bytes === void 0) { bytes = 0; }
         if (precision === void 0) { precision = 2; }
         if (isNaN(parseFloat(String(bytes))) || !isFinite(bytes)) {
             return '?';
         }
-        /** @type {?} */
         var unit = 0;
         while (bytes >= 1024) {
             bytes /= 1024;
@@ -221,73 +35,66 @@ var FileSizePipe = /** @class */ (function () {
         }
         return bytes.toFixed(+precision) + ' ' + this.units[unit];
     };
-    FileSizePipe.decorators = [
-        { type: Pipe, args: [{ name: 'fileSize' },] }
-    ];
+    /** @nocollapse */ FileSizePipe.ɵfac = function FileSizePipe_Factory(t) { return new (t || FileSizePipe)(); };
+    /** @nocollapse */ FileSizePipe.ɵpipe = ɵɵdefinePipe({ name: "fileSize", type: FileSizePipe, pure: true });
     return FileSizePipe;
 }());
+/*@__PURE__*/ (function () { ɵsetClassMetadata(FileSizePipe, [{
+        type: Pipe,
+        args: [{ name: 'fileSize' }]
+    }], null, null); })();
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var UnzipObjectPipe = /** @class */ (function () {
-    function UnzipObjectPipe() {
+var ShortenFullpathPipe = /** @class */ (function () {
+    function ShortenFullpathPipe() {
     }
-    /**
-     * @param {?} value
-     * @param {...?} args
-     * @return {?}
-     */
-    UnzipObjectPipe.prototype.transform = /**
-     * @param {?} value
-     * @param {...?} args
-     * @return {?}
-     */
-    function (value) {
-        var args = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
+    ShortenFullpathPipe.prototype.shortJustName = function (value, left, right) {
+        if (value.length <= left + right) {
+            return value;
         }
-        /** @type {?} */
-        var keys = [];
-        for (var key in value) {
-            if (value.hasOwnProperty(key)) {
-                keys.push({ key: key, value: value[key] });
-            }
+        var index = value.lastIndexOf('.');
+        if (index === -1) {
+            // no extension
+            return value.substring(0, left) + '...' + value.substring(value.length - right);
         }
-        return keys;
+        // has extension
+        var ext = value.substring(index);
+        if (ext.length >= left + right) {
+            return '...' + ext;
+        }
+        return value.substring(0, left + right - ext.length) + '...' + ext;
     };
-    UnzipObjectPipe.decorators = [
-        { type: Pipe, args: [{ name: 'unzipObject' },] }
-    ];
-    return UnzipObjectPipe;
+    ShortenFullpathPipe.prototype.transform = function (value, maxlen) {
+        if (value.length <= maxlen) {
+            return value;
+        }
+        var leftLen = Math.trunc(maxlen / 2);
+        var rightLen = maxlen - leftLen;
+        var index = value.lastIndexOf('\\');
+        if (index === -1) {
+            return this.shortJustName(value, leftLen, rightLen);
+        }
+        else {
+            var r = this.shortJustName(value.substring(index + 1), leftLen, rightLen);
+            return '...\\' + r;
+        }
+    };
+    /** @nocollapse */ ShortenFullpathPipe.ɵfac = function ShortenFullpathPipe_Factory(t) { return new (t || ShortenFullpathPipe)(); };
+    /** @nocollapse */ ShortenFullpathPipe.ɵpipe = ɵɵdefinePipe({ name: "shortenFullpath", type: ShortenFullpathPipe, pure: true });
+    return ShortenFullpathPipe;
 }());
+/*@__PURE__*/ (function () { ɵsetClassMetadata(ShortenFullpathPipe, [{
+        type: Pipe,
+        args: [{ name: 'shortenFullpath' }]
+    }], null, null); })();
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 var ParentDirPipe = /** @class */ (function () {
     function ParentDirPipe() {
     }
     // Remove the last part of a path.
-    // Remove the last part of a path.
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    ParentDirPipe.prototype.transform = 
-    // Remove the last part of a path.
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    function (value) {
+    ParentDirPipe.prototype.transform = function (value) {
         if (!value) {
             return '';
         }
-        /** @type {?} */
         var index = value.lastIndexOf('\\');
         if (index === -1) {
             return '';
@@ -296,55 +103,191 @@ var ParentDirPipe = /** @class */ (function () {
             return value.substring(0, index);
         }
     };
-    ParentDirPipe.decorators = [
-        { type: Pipe, args: [{ name: 'parentDir' },] }
-    ];
+    /** @nocollapse */ ParentDirPipe.ɵfac = function ParentDirPipe_Factory(t) { return new (t || ParentDirPipe)(); };
+    /** @nocollapse */ ParentDirPipe.ɵpipe = ɵɵdefinePipe({ name: "parentDir", type: ParentDirPipe, pure: true });
     return ParentDirPipe;
 }());
+/*@__PURE__*/ (function () { ɵsetClassMetadata(ParentDirPipe, [{
+        type: Pipe,
+        args: [{ name: 'parentDir' }]
+    }], null, null); })();
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
+var SafeDomPipe = /** @class */ (function () {
+    function SafeDomPipe(sanitizer) {
+        this.sanitizer = sanitizer;
+    }
+    SafeDomPipe.prototype.transform = function (value, type) {
+        switch (type) {
+            case 'html': return this.sanitizer.bypassSecurityTrustHtml(value);
+            case 'style': return this.sanitizer.bypassSecurityTrustStyle(value);
+            case 'script': return this.sanitizer.bypassSecurityTrustScript(value);
+            case 'url': return this.sanitizer.bypassSecurityTrustUrl(value);
+            case 'resourceUrl': return this.sanitizer.bypassSecurityTrustResourceUrl(value);
+            default: throw new Error("Invalid safe type specified: " + type);
+        }
+    };
+    /** @nocollapse */ SafeDomPipe.ɵfac = function SafeDomPipe_Factory(t) { return new (t || SafeDomPipe)(ɵɵdirectiveInject(DomSanitizer)); };
+    /** @nocollapse */ SafeDomPipe.ɵpipe = ɵɵdefinePipe({ name: "safeDom", type: SafeDomPipe, pure: true });
+    return SafeDomPipe;
+}());
+/*@__PURE__*/ (function () { ɵsetClassMetadata(SafeDomPipe, [{
+        type: Pipe,
+        args: [{
+                name: 'safeDom'
+            }]
+    }], function () { return [{ type: DomSanitizer }]; }, null); })();
+
+/*
+ * Transform a string into an array of segments.
+ * Usage:
+ *   path | segments
+ * Example:
+ *   {{ '\test\tt' |  segments:'\\' }}
+ *   formats to: ['test', 'tt']
+*/
+var SegmentsPipe = /** @class */ (function () {
+    function SegmentsPipe() {
+    }
+    SegmentsPipe.prototype.transform = function (path, separator) {
+        if (separator === void 0) { separator = '\\'; }
+        if (!path) {
+            return [];
+        }
+        var ss = path.split(separator);
+        ss = ss.filter(function (x) { return x.length > 0; });
+        var len = ss.length;
+        var pp = ss.map(function (y, index) {
+            return {
+                value: y,
+                id: index,
+                lastId: len - 1
+            };
+        });
+        return pp;
+    };
+    /** @nocollapse */ SegmentsPipe.ɵfac = function SegmentsPipe_Factory(t) { return new (t || SegmentsPipe)(); };
+    /** @nocollapse */ SegmentsPipe.ɵpipe = ɵɵdefinePipe({ name: "segments", type: SegmentsPipe, pure: true });
+    return SegmentsPipe;
+}());
+/*@__PURE__*/ (function () { ɵsetClassMetadata(SegmentsPipe, [{
+        type: Pipe,
+        args: [{ name: 'segments' }]
+    }], null, null); })();
+
+var UnrollArrayPipe = /** @class */ (function () {
+    function UnrollArrayPipe() {
+    }
+    UnrollArrayPipe.prototype.transform = function (value) {
+        var len = value.length;
+        var half = Math.floor(len / 2);
+        var index = 0;
+        var groups = [];
+        for (var i = 0; i < half; i++) {
+            groups.push({
+                first: value[index],
+                second: value[index + 1]
+            });
+            index += 2;
+        }
+        var last = null;
+        if (index < len) {
+            last = value[index];
+        }
+        return {
+            pairs: groups,
+            last: last
+        };
+    };
+    /** @nocollapse */ UnrollArrayPipe.ɵfac = function UnrollArrayPipe_Factory(t) { return new (t || UnrollArrayPipe)(); };
+    /** @nocollapse */ UnrollArrayPipe.ɵpipe = ɵɵdefinePipe({ name: "unrollArray", type: UnrollArrayPipe, pure: true });
+    return UnrollArrayPipe;
+}());
+/*@__PURE__*/ (function () { ɵsetClassMetadata(UnrollArrayPipe, [{
+        type: Pipe,
+        args: [{ name: 'unrollArray' }]
+    }], null, null); })();
+
+var UnzipObjectPipe = /** @class */ (function () {
+    function UnzipObjectPipe() {
+    }
+    UnzipObjectPipe.prototype.transform = function (value) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        var keys = [];
+        for (var key in value) {
+            if (value.hasOwnProperty(key)) {
+                keys.push({ key: key, value: value[key] });
+            }
+        }
+        return keys;
+    };
+    /** @nocollapse */ UnzipObjectPipe.ɵfac = function UnzipObjectPipe_Factory(t) { return new (t || UnzipObjectPipe)(); };
+    /** @nocollapse */ UnzipObjectPipe.ɵpipe = ɵɵdefinePipe({ name: "unzipObject", type: UnzipObjectPipe, pure: true });
+    return UnzipObjectPipe;
+}());
+/*@__PURE__*/ (function () { ɵsetClassMetadata(UnzipObjectPipe, [{
+        type: Pipe,
+        args: [{ name: 'unzipObject' }]
+    }], null, null); })();
+
 var PolpwareNgxPipesModule = /** @class */ (function () {
     function PolpwareNgxPipesModule() {
     }
-    PolpwareNgxPipesModule.decorators = [
-        { type: NgModule, args: [{
-                    declarations: [
-                        UnrollArrayPipe,
-                        SegmentsPipe,
-                        ShortenFullpathPipe,
-                        FileSizePipe,
-                        UnzipObjectPipe,
-                        ParentDirPipe
-                    ],
-                    imports: [
-                        CommonModule
-                    ],
-                    exports: [
-                        UnrollArrayPipe,
-                        SegmentsPipe,
-                        ShortenFullpathPipe,
-                        FileSizePipe,
-                        UnzipObjectPipe,
-                        ParentDirPipe
-                    ]
-                },] }
-    ];
+    /** @nocollapse */ PolpwareNgxPipesModule.ɵmod = ɵɵdefineNgModule({ type: PolpwareNgxPipesModule });
+    /** @nocollapse */ PolpwareNgxPipesModule.ɵinj = ɵɵdefineInjector({ factory: function PolpwareNgxPipesModule_Factory(t) { return new (t || PolpwareNgxPipesModule)(); }, imports: [[
+                CommonModule
+            ]] });
     return PolpwareNgxPipesModule;
 }());
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(PolpwareNgxPipesModule, { declarations: [UnrollArrayPipe,
+        SegmentsPipe,
+        ShortenFullpathPipe,
+        FileSizePipe,
+        UnzipObjectPipe,
+        ParentDirPipe,
+        SafeDomPipe], imports: [CommonModule], exports: [UnrollArrayPipe,
+        SegmentsPipe,
+        ShortenFullpathPipe,
+        FileSizePipe,
+        UnzipObjectPipe,
+        ParentDirPipe,
+        SafeDomPipe] }); })();
+/*@__PURE__*/ (function () { ɵsetClassMetadata(PolpwareNgxPipesModule, [{
+        type: NgModule,
+        args: [{
+                declarations: [
+                    UnrollArrayPipe,
+                    SegmentsPipe,
+                    ShortenFullpathPipe,
+                    FileSizePipe,
+                    UnzipObjectPipe,
+                    ParentDirPipe,
+                    SafeDomPipe
+                ],
+                imports: [
+                    CommonModule
+                ],
+                exports: [
+                    UnrollArrayPipe,
+                    SegmentsPipe,
+                    ShortenFullpathPipe,
+                    FileSizePipe,
+                    UnzipObjectPipe,
+                    ParentDirPipe,
+                    SafeDomPipe
+                ]
+            }]
+    }], null, null); })();
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+/*
+ * Public API Surface of ngx-pipes
  */
 
 /**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated bundle index. Do not edit.
  */
 
-export { PolpwareNgxPipesModule, FileSizePipe as ɵd, ShortenFullpathPipe as ɵc, ParentDirPipe as ɵf, SegmentsPipe as ɵb, UnrollArrayPipe as ɵa, UnzipObjectPipe as ɵe };
-
+export { FileSizePipe, ParentDirPipe, PolpwareNgxPipesModule, SafeDomPipe, SegmentsPipe, ShortenFullpathPipe, UnrollArrayPipe, UnzipObjectPipe };
 //# sourceMappingURL=polpware-ngx-pipes.js.map
