@@ -5,6 +5,6 @@ export declare class SafeDomPipe implements PipeTransform {
     protected sanitizer: DomSanitizer;
     constructor(sanitizer: DomSanitizer);
     transform(value: any, type: string): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl;
-    static ɵfac: i0.ɵɵFactoryDef<SafeDomPipe, never>;
-    static ɵpipe: i0.ɵɵPipeDefWithMeta<SafeDomPipe, "safeDom">;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SafeDomPipe, never>;
+    static ɵpipe: i0.ɵɵPipeDeclaration<SafeDomPipe, "safeDom">;
 }

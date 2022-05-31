@@ -1,5 +1,6 @@
-import { ɵɵdefinePipe, ɵsetClassMetadata, Pipe, ɵɵdirectiveInject, ɵɵdefineNgModule, ɵɵdefineInjector, ɵɵsetNgModuleScope, NgModule } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import * as i0 from '@angular/core';
+import { Pipe, NgModule } from '@angular/core';
+import * as i1 from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
 /*
@@ -35,11 +36,13 @@ class FileSizePipe {
     }
 }
 /** @nocollapse */ FileSizePipe.ɵfac = function FileSizePipe_Factory(t) { return new (t || FileSizePipe)(); };
-/** @nocollapse */ FileSizePipe.ɵpipe = ɵɵdefinePipe({ name: "fileSize", type: FileSizePipe, pure: true });
-/*@__PURE__*/ (function () { ɵsetClassMetadata(FileSizePipe, [{
-        type: Pipe,
-        args: [{ name: 'fileSize' }]
-    }], null, null); })();
+/** @nocollapse */ FileSizePipe.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "fileSize", type: FileSizePipe, pure: true });
+(function () {
+    (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(FileSizePipe, [{
+            type: Pipe,
+            args: [{ name: 'fileSize' }]
+        }], null, null);
+})();
 
 class ShortenFullpathPipe {
     shortJustName(value, left, right) {
@@ -75,11 +78,13 @@ class ShortenFullpathPipe {
     }
 }
 /** @nocollapse */ ShortenFullpathPipe.ɵfac = function ShortenFullpathPipe_Factory(t) { return new (t || ShortenFullpathPipe)(); };
-/** @nocollapse */ ShortenFullpathPipe.ɵpipe = ɵɵdefinePipe({ name: "shortenFullpath", type: ShortenFullpathPipe, pure: true });
-/*@__PURE__*/ (function () { ɵsetClassMetadata(ShortenFullpathPipe, [{
-        type: Pipe,
-        args: [{ name: 'shortenFullpath' }]
-    }], null, null); })();
+/** @nocollapse */ ShortenFullpathPipe.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "shortenFullpath", type: ShortenFullpathPipe, pure: true });
+(function () {
+    (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ShortenFullpathPipe, [{
+            type: Pipe,
+            args: [{ name: 'shortenFullpath' }]
+        }], null, null);
+})();
 
 class ParentDirPipe {
     // Remove the last part of a path.
@@ -97,11 +102,13 @@ class ParentDirPipe {
     }
 }
 /** @nocollapse */ ParentDirPipe.ɵfac = function ParentDirPipe_Factory(t) { return new (t || ParentDirPipe)(); };
-/** @nocollapse */ ParentDirPipe.ɵpipe = ɵɵdefinePipe({ name: "parentDir", type: ParentDirPipe, pure: true });
-/*@__PURE__*/ (function () { ɵsetClassMetadata(ParentDirPipe, [{
-        type: Pipe,
-        args: [{ name: 'parentDir' }]
-    }], null, null); })();
+/** @nocollapse */ ParentDirPipe.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "parentDir", type: ParentDirPipe, pure: true });
+(function () {
+    (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ParentDirPipe, [{
+            type: Pipe,
+            args: [{ name: 'parentDir' }]
+        }], null, null);
+})();
 
 class SafeDomPipe {
     constructor(sanitizer) {
@@ -118,14 +125,16 @@ class SafeDomPipe {
         }
     }
 }
-/** @nocollapse */ SafeDomPipe.ɵfac = function SafeDomPipe_Factory(t) { return new (t || SafeDomPipe)(ɵɵdirectiveInject(DomSanitizer)); };
-/** @nocollapse */ SafeDomPipe.ɵpipe = ɵɵdefinePipe({ name: "safeDom", type: SafeDomPipe, pure: true });
-/*@__PURE__*/ (function () { ɵsetClassMetadata(SafeDomPipe, [{
-        type: Pipe,
-        args: [{
-                name: 'safeDom'
-            }]
-    }], function () { return [{ type: DomSanitizer }]; }, null); })();
+/** @nocollapse */ SafeDomPipe.ɵfac = function SafeDomPipe_Factory(t) { return new (t || SafeDomPipe)(i0.ɵɵdirectiveInject(i1.DomSanitizer, 16)); };
+/** @nocollapse */ SafeDomPipe.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "safeDom", type: SafeDomPipe, pure: true });
+(function () {
+    (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SafeDomPipe, [{
+            type: Pipe,
+            args: [{
+                    name: 'safeDom'
+                }]
+        }], function () { return [{ type: i1.DomSanitizer }]; }, null);
+})();
 
 /*
  * Transform a string into an array of segments.
@@ -154,11 +163,13 @@ class SegmentsPipe {
     }
 }
 /** @nocollapse */ SegmentsPipe.ɵfac = function SegmentsPipe_Factory(t) { return new (t || SegmentsPipe)(); };
-/** @nocollapse */ SegmentsPipe.ɵpipe = ɵɵdefinePipe({ name: "segments", type: SegmentsPipe, pure: true });
-/*@__PURE__*/ (function () { ɵsetClassMetadata(SegmentsPipe, [{
-        type: Pipe,
-        args: [{ name: 'segments' }]
-    }], null, null); })();
+/** @nocollapse */ SegmentsPipe.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "segments", type: SegmentsPipe, pure: true });
+(function () {
+    (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SegmentsPipe, [{
+            type: Pipe,
+            args: [{ name: 'segments' }]
+        }], null, null);
+})();
 
 class UnrollArrayPipe {
     transform(value) {
@@ -184,11 +195,13 @@ class UnrollArrayPipe {
     }
 }
 /** @nocollapse */ UnrollArrayPipe.ɵfac = function UnrollArrayPipe_Factory(t) { return new (t || UnrollArrayPipe)(); };
-/** @nocollapse */ UnrollArrayPipe.ɵpipe = ɵɵdefinePipe({ name: "unrollArray", type: UnrollArrayPipe, pure: true });
-/*@__PURE__*/ (function () { ɵsetClassMetadata(UnrollArrayPipe, [{
-        type: Pipe,
-        args: [{ name: 'unrollArray' }]
-    }], null, null); })();
+/** @nocollapse */ UnrollArrayPipe.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "unrollArray", type: UnrollArrayPipe, pure: true });
+(function () {
+    (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(UnrollArrayPipe, [{
+            type: Pipe,
+            args: [{ name: 'unrollArray' }]
+        }], null, null);
+})();
 
 class UnzipObjectPipe {
     transform(value, ...args) {
@@ -202,57 +215,64 @@ class UnzipObjectPipe {
     }
 }
 /** @nocollapse */ UnzipObjectPipe.ɵfac = function UnzipObjectPipe_Factory(t) { return new (t || UnzipObjectPipe)(); };
-/** @nocollapse */ UnzipObjectPipe.ɵpipe = ɵɵdefinePipe({ name: "unzipObject", type: UnzipObjectPipe, pure: true });
-/*@__PURE__*/ (function () { ɵsetClassMetadata(UnzipObjectPipe, [{
-        type: Pipe,
-        args: [{ name: 'unzipObject' }]
-    }], null, null); })();
+/** @nocollapse */ UnzipObjectPipe.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "unzipObject", type: UnzipObjectPipe, pure: true });
+(function () {
+    (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(UnzipObjectPipe, [{
+            type: Pipe,
+            args: [{ name: 'unzipObject' }]
+        }], null, null);
+})();
 
 class PolpwareNgxPipesModule {
 }
-/** @nocollapse */ PolpwareNgxPipesModule.ɵmod = ɵɵdefineNgModule({ type: PolpwareNgxPipesModule });
-/** @nocollapse */ PolpwareNgxPipesModule.ɵinj = ɵɵdefineInjector({ factory: function PolpwareNgxPipesModule_Factory(t) { return new (t || PolpwareNgxPipesModule)(); }, imports: [[
+/** @nocollapse */ PolpwareNgxPipesModule.ɵfac = function PolpwareNgxPipesModule_Factory(t) { return new (t || PolpwareNgxPipesModule)(); };
+/** @nocollapse */ PolpwareNgxPipesModule.ɵmod = /** @pureOrBreakMyCode */ i0.ɵɵdefineNgModule({ type: PolpwareNgxPipesModule });
+/** @nocollapse */ PolpwareNgxPipesModule.ɵinj = /** @pureOrBreakMyCode */ i0.ɵɵdefineInjector({ imports: [[
             CommonModule
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && ɵɵsetNgModuleScope(PolpwareNgxPipesModule, { declarations: [UnrollArrayPipe,
-        SegmentsPipe,
-        ShortenFullpathPipe,
-        FileSizePipe,
-        UnzipObjectPipe,
-        ParentDirPipe,
-        SafeDomPipe], imports: [CommonModule], exports: [UnrollArrayPipe,
-        SegmentsPipe,
-        ShortenFullpathPipe,
-        FileSizePipe,
-        UnzipObjectPipe,
-        ParentDirPipe,
-        SafeDomPipe] }); })();
-/*@__PURE__*/ (function () { ɵsetClassMetadata(PolpwareNgxPipesModule, [{
-        type: NgModule,
-        args: [{
-                declarations: [
-                    UnrollArrayPipe,
-                    SegmentsPipe,
-                    ShortenFullpathPipe,
-                    FileSizePipe,
-                    UnzipObjectPipe,
-                    ParentDirPipe,
-                    SafeDomPipe
-                ],
-                imports: [
-                    CommonModule
-                ],
-                exports: [
-                    UnrollArrayPipe,
-                    SegmentsPipe,
-                    ShortenFullpathPipe,
-                    FileSizePipe,
-                    UnzipObjectPipe,
-                    ParentDirPipe,
-                    SafeDomPipe
-                ]
-            }]
-    }], null, null); })();
+(function () {
+    (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PolpwareNgxPipesModule, [{
+            type: NgModule,
+            args: [{
+                    declarations: [
+                        UnrollArrayPipe,
+                        SegmentsPipe,
+                        ShortenFullpathPipe,
+                        FileSizePipe,
+                        UnzipObjectPipe,
+                        ParentDirPipe,
+                        SafeDomPipe
+                    ],
+                    imports: [
+                        CommonModule
+                    ],
+                    exports: [
+                        UnrollArrayPipe,
+                        SegmentsPipe,
+                        ShortenFullpathPipe,
+                        FileSizePipe,
+                        UnzipObjectPipe,
+                        ParentDirPipe,
+                        SafeDomPipe
+                    ]
+                }]
+        }], null, null);
+})();
+(function () {
+    (typeof ngJitMode === "undefined" || ngJitMode) && i0.ɵɵsetNgModuleScope(PolpwareNgxPipesModule, { declarations: [UnrollArrayPipe,
+            SegmentsPipe,
+            ShortenFullpathPipe,
+            FileSizePipe,
+            UnzipObjectPipe,
+            ParentDirPipe,
+            SafeDomPipe], imports: [CommonModule], exports: [UnrollArrayPipe,
+            SegmentsPipe,
+            ShortenFullpathPipe,
+            FileSizePipe,
+            UnzipObjectPipe,
+            ParentDirPipe,
+            SafeDomPipe] });
+})();
 
 /*
  * Public API Surface of ngx-pipes
@@ -263,4 +283,4 @@ class PolpwareNgxPipesModule {
  */
 
 export { FileSizePipe, ParentDirPipe, PolpwareNgxPipesModule, SafeDomPipe, SegmentsPipe, ShortenFullpathPipe, UnrollArrayPipe, UnzipObjectPipe };
-//# sourceMappingURL=polpware-ngx-pipes.js.map
+//# sourceMappingURL=polpware-ngx-pipes.mjs.map

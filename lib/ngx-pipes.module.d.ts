@@ -8,6 +8,7 @@ import * as i6 from "./pipes/parent-dir.pipe";
 import * as i7 from "./pipes/safe-dom.pipe";
 import * as i8 from "@angular/common";
 export declare class PolpwareNgxPipesModule {
-    static ɵmod: i0.ɵɵNgModuleDefWithMeta<PolpwareNgxPipesModule, [typeof i1.UnrollArrayPipe, typeof i2.SegmentsPipe, typeof i3.ShortenFullpathPipe, typeof i4.FileSizePipe, typeof i5.UnzipObjectPipe, typeof i6.ParentDirPipe, typeof i7.SafeDomPipe], [typeof i8.CommonModule], [typeof i1.UnrollArrayPipe, typeof i2.SegmentsPipe, typeof i3.ShortenFullpathPipe, typeof i4.FileSizePipe, typeof i5.UnzipObjectPipe, typeof i6.ParentDirPipe, typeof i7.SafeDomPipe]>;
-    static ɵinj: i0.ɵɵInjectorDef<PolpwareNgxPipesModule>;
+    static ɵfac: i0.ɵɵFactoryDeclaration<PolpwareNgxPipesModule, never>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<PolpwareNgxPipesModule, [typeof i1.UnrollArrayPipe, typeof i2.SegmentsPipe, typeof i3.ShortenFullpathPipe, typeof i4.FileSizePipe, typeof i5.UnzipObjectPipe, typeof i6.ParentDirPipe, typeof i7.SafeDomPipe], [typeof i8.CommonModule], [typeof i1.UnrollArrayPipe, typeof i2.SegmentsPipe, typeof i3.ShortenFullpathPipe, typeof i4.FileSizePipe, typeof i5.UnzipObjectPipe, typeof i6.ParentDirPipe, typeof i7.SafeDomPipe]>;
+    static ɵinj: i0.ɵɵInjectorDeclaration<PolpwareNgxPipesModule>;
 }

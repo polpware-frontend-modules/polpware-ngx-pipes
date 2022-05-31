@@ -10,7 +10,7 @@ interface IUnrollResult {
 }
 export declare class UnrollArrayPipe implements PipeTransform {
     transform(value: Array<any>): IUnrollResult;
-    static ɵfac: i0.ɵɵFactoryDef<UnrollArrayPipe, never>;
-    static ɵpipe: i0.ɵɵPipeDefWithMeta<UnrollArrayPipe, "unrollArray">;
+    static ɵfac: i0.ɵɵFactoryDeclaration<UnrollArrayPipe, never>;
+    static ɵpipe: i0.ɵɵPipeDeclaration<UnrollArrayPipe, "unrollArray">;
 }
 export {};

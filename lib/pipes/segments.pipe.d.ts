@@ -6,6 +6,6 @@ export declare class SegmentsPipe implements PipeTransform {
         id: number;
         lastId: number;
     }>;
-    static ɵfac: i0.ɵɵFactoryDef<SegmentsPipe, never>;
-    static ɵpipe: i0.ɵɵPipeDefWithMeta<SegmentsPipe, "segments">;
+    static ɵfac: i0.ɵɵFactoryDeclaration<SegmentsPipe, never>;
+    static ɵpipe: i0.ɵɵPipeDeclaration<SegmentsPipe, "segments">;
 }
