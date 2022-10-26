@@ -209,6 +209,46 @@ class UnzipObjectPipe {
         args: [{ name: 'unzipObject' }]
     }], null, null); })();
 
+class TrimStartPipe {
+    transform(value, maxLen, appendEllipsis = true) {
+        if (!value) {
+            return '';
+        }
+        if (value.length <= maxLen) {
+            return value;
+        }
+        return (appendEllipsis ? '...' : '') + value.substring(value.length - maxLen, value.length - 1);
+    }
+}
+/** @nocollapse */ TrimStartPipe.ɵfac = function TrimStartPipe_Factory(t) { return new (t || TrimStartPipe)(); };
+/** @nocollapse */ TrimStartPipe.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "trimStart", type: TrimStartPipe, pure: true });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(TrimStartPipe, [{
+        type: Pipe,
+        args: [{
+                name: 'trimStart'
+            }]
+    }], null, null); })();
+
+class TrimEndPipe {
+    transform(value, maxLen, appendEllipsis = true) {
+        if (!value) {
+            return '';
+        }
+        if (value.length <= maxLen) {
+            return value;
+        }
+        return value.substring(0, maxLen - 1) + (appendEllipsis ? '...' : '');
+    }
+}
+/** @nocollapse */ TrimEndPipe.ɵfac = function TrimEndPipe_Factory(t) { return new (t || TrimEndPipe)(); };
+/** @nocollapse */ TrimEndPipe.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "trimEnd", type: TrimEndPipe, pure: true });
+(function () { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(TrimEndPipe, [{
+        type: Pipe,
+        args: [{
+                name: 'trimEnd'
+            }]
+    }], null, null); })();
+
 class PolpwareNgxPipesModule {
 }
 /** @nocollapse */ PolpwareNgxPipesModule.ɵfac = function PolpwareNgxPipesModule_Factory(t) { return new (t || PolpwareNgxPipesModule)(); };
@@ -226,7 +266,9 @@ class PolpwareNgxPipesModule {
                     FileSizePipe,
                     UnzipObjectPipe,
                     ParentDirPipe,
-                    SafeDomPipe
+                    SafeDomPipe,
+                    TrimEndPipe,
+                    TrimStartPipe
                 ],
                 imports: [
                     CommonModule
@@ -238,7 +280,9 @@ class PolpwareNgxPipesModule {
                     FileSizePipe,
                     UnzipObjectPipe,
                     ParentDirPipe,
-                    SafeDomPipe
+                    SafeDomPipe,
+                    TrimEndPipe,
+                    TrimStartPipe
                 ]
             }]
     }], null, null); })();
@@ -248,13 +292,17 @@ class PolpwareNgxPipesModule {
         FileSizePipe,
         UnzipObjectPipe,
         ParentDirPipe,
-        SafeDomPipe], imports: [CommonModule], exports: [UnrollArrayPipe,
+        SafeDomPipe,
+        TrimEndPipe,
+        TrimStartPipe], imports: [CommonModule], exports: [UnrollArrayPipe,
         SegmentsPipe,
         ShortenFullpathPipe,
         FileSizePipe,
         UnzipObjectPipe,
         ParentDirPipe,
-        SafeDomPipe] }); })();
+        SafeDomPipe,
+        TrimEndPipe,
+        TrimStartPipe] }); })();
 
 /*
  * Public API Surface of ngx-pipes
@@ -264,5 +312,5 @@ class PolpwareNgxPipesModule {
  * Generated bundle index. Do not edit.
  */
 
-export { FileSizePipe, ParentDirPipe, PolpwareNgxPipesModule, SafeDomPipe, SegmentsPipe, ShortenFullpathPipe, UnrollArrayPipe, UnzipObjectPipe };
+export { FileSizePipe, ParentDirPipe, PolpwareNgxPipesModule, SafeDomPipe, SegmentsPipe, ShortenFullpathPipe, TrimEndPipe, TrimStartPipe, UnrollArrayPipe, UnzipObjectPipe };
 //# sourceMappingURL=polpware-ngx-pipes.mjs.map

@@ -5,4 +5,6 @@ export * from "./lib/pipes/safe-dom.pipe";
 export * from "./lib/pipes/segments.pipe";
 export * from "./lib/pipes/unroll-array.pipe";
 export * from "./lib/pipes/unzip-object.pipe";
+export * from "./lib/pipes/trim-start.pipe";
+export * from "./lib/pipes/trim-end.pipe";
 export * from "./lib/ngx-pipes.module";
