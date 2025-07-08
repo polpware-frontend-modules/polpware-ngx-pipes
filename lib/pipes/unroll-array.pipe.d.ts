@@ -11,6 +11,6 @@ interface IUnrollResult {
 export declare class UnrollArrayPipe implements PipeTransform {
     transform(value: Array<any>): IUnrollResult;
     static ɵfac: i0.ɵɵFactoryDeclaration<UnrollArrayPipe, never>;
-    static ɵpipe: i0.ɵɵPipeDeclaration<UnrollArrayPipe, "unrollArray">;
+    static ɵpipe: i0.ɵɵPipeDeclaration<UnrollArrayPipe, "unrollArray", false>;
 }
 export {};

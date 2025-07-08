@@ -7,5 +7,5 @@ export declare class SegmentsPipe implements PipeTransform {
         lastId: number;
     }>;
     static ɵfac: i0.ɵɵFactoryDeclaration<SegmentsPipe, never>;
-    static ɵpipe: i0.ɵɵPipeDeclaration<SegmentsPipe, "segments">;
+    static ɵpipe: i0.ɵɵPipeDeclaration<SegmentsPipe, "segments", false>;
 }

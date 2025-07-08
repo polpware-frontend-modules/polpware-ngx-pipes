@@ -4,5 +4,5 @@ export declare class FileSizePipe implements PipeTransform {
     private units;
     transform(bytes?: number, precision?: number): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<FileSizePipe, never>;
-    static ɵpipe: i0.ɵɵPipeDeclaration<FileSizePipe, "fileSize">;
+    static ɵpipe: i0.ɵɵPipeDeclaration<FileSizePipe, "fileSize", false>;
 }

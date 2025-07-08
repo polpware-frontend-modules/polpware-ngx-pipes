@@ -3,5 +3,5 @@ import * as i0 from "@angular/core";
 export declare class ParentDirPipe implements PipeTransform {
     transform(value: string): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<ParentDirPipe, never>;
-    static ɵpipe: i0.ɵɵPipeDeclaration<ParentDirPipe, "parentDir">;
+    static ɵpipe: i0.ɵɵPipeDeclaration<ParentDirPipe, "parentDir", false>;
 }

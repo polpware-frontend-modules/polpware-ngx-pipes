@@ -271,9 +271,7 @@ class PolpwareNgxPipesModule {
 }
 /** @nocollapse */ PolpwareNgxPipesModule.ɵfac = function PolpwareNgxPipesModule_Factory(t) { return new (t || PolpwareNgxPipesModule)(); };
 /** @nocollapse */ PolpwareNgxPipesModule.ɵmod = /** @pureOrBreakMyCode */ i0.ɵɵdefineNgModule({ type: PolpwareNgxPipesModule });
-/** @nocollapse */ PolpwareNgxPipesModule.ɵinj = /** @pureOrBreakMyCode */ i0.ɵɵdefineInjector({ imports: [[
-            CommonModule
-        ]] });
+/** @nocollapse */ PolpwareNgxPipesModule.ɵinj = /** @pureOrBreakMyCode */ i0.ɵɵdefineInjector({ imports: [CommonModule] });
 (function () {
     (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(PolpwareNgxPipesModule, [{
             type: NgModule,

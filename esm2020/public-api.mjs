@@ -1,0 +1,14 @@
+/*
+ * Public API Surface of ngx-pipes
+ */
+export * from "./lib/pipes/file-size.pipe";
+export * from "./lib/pipes/fullpath.pipe";
+export * from "./lib/pipes/parent-dir.pipe";
+export * from "./lib/pipes/safe-dom.pipe";
+export * from "./lib/pipes/segments.pipe";
+export * from "./lib/pipes/unroll-array.pipe";
+export * from "./lib/pipes/unzip-object.pipe";
+export * from "./lib/pipes/trim-start.pipe";
+export * from "./lib/pipes/trim-end.pipe";
+export * from "./lib/ngx-pipes.module";
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL3BvbHB3YXJlL25neC1waXBlcy9zcmMvcHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRztBQUVILGNBQWMsNEJBQTRCLENBQUM7QUFDM0MsY0FBYywyQkFBMkIsQ0FBQztBQUMxQyxjQUFjLDZCQUE2QixDQUFDO0FBQzVDLGNBQWMsMkJBQTJCLENBQUM7QUFDMUMsY0FBYywyQkFBMkIsQ0FBQztBQUMxQyxjQUFjLCtCQUErQixDQUFDO0FBQzlDLGNBQWMsK0JBQStCLENBQUM7QUFDOUMsY0FBYyw2QkFBNkIsQ0FBQztBQUM1QyxjQUFjLDJCQUEyQixDQUFDO0FBQzFDLGNBQWMsd0JBQXdCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxuICogUHVibGljIEFQSSBTdXJmYWNlIG9mIG5neC1waXBlc1xuICovXG5cbmV4cG9ydCAqIGZyb20gXCIuL2xpYi9waXBlcy9maWxlLXNpemUucGlwZVwiO1xuZXhwb3J0ICogZnJvbSBcIi4vbGliL3BpcGVzL2Z1bGxwYXRoLnBpcGVcIjtcbmV4cG9ydCAqIGZyb20gXCIuL2xpYi9waXBlcy9wYXJlbnQtZGlyLnBpcGVcIjtcbmV4cG9ydCAqIGZyb20gXCIuL2xpYi9waXBlcy9zYWZlLWRvbS5waXBlXCI7XG5leHBvcnQgKiBmcm9tIFwiLi9saWIvcGlwZXMvc2VnbWVudHMucGlwZVwiO1xuZXhwb3J0ICogZnJvbSBcIi4vbGliL3BpcGVzL3Vucm9sbC1hcnJheS5waXBlXCI7XG5leHBvcnQgKiBmcm9tIFwiLi9saWIvcGlwZXMvdW56aXAtb2JqZWN0LnBpcGVcIjtcbmV4cG9ydCAqIGZyb20gXCIuL2xpYi9waXBlcy90cmltLXN0YXJ0LnBpcGVcIjtcbmV4cG9ydCAqIGZyb20gXCIuL2xpYi9waXBlcy90cmltLWVuZC5waXBlXCI7XG5leHBvcnQgKiBmcm9tIFwiLi9saWIvbmd4LXBpcGVzLm1vZHVsZVwiO1xuXG4iXX0=
