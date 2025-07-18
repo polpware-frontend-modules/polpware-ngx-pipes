@@ -34,7 +34,7 @@ class FileSizePipe {
         }
         return bytes.toFixed(+precision) + ' ' + this.units[unit];
     }
-    /** @nocollapse */ static { this.ɵfac = function FileSizePipe_Factory(t) { return new (t || FileSizePipe)(); }; }
+    /** @nocollapse */ static { this.ɵfac = function FileSizePipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || FileSizePipe)(); }; }
     /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "fileSize", type: FileSizePipe, pure: true }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(FileSizePipe, [{
@@ -74,7 +74,7 @@ class ShortenFullpathPipe {
             return '...\\' + r;
         }
     }
-    /** @nocollapse */ static { this.ɵfac = function ShortenFullpathPipe_Factory(t) { return new (t || ShortenFullpathPipe)(); }; }
+    /** @nocollapse */ static { this.ɵfac = function ShortenFullpathPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || ShortenFullpathPipe)(); }; }
     /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "shortenFullpath", type: ShortenFullpathPipe, pure: true }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ShortenFullpathPipe, [{
@@ -96,7 +96,7 @@ class ParentDirPipe {
             return value.substring(0, index);
         }
     }
-    /** @nocollapse */ static { this.ɵfac = function ParentDirPipe_Factory(t) { return new (t || ParentDirPipe)(); }; }
+    /** @nocollapse */ static { this.ɵfac = function ParentDirPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || ParentDirPipe)(); }; }
     /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "parentDir", type: ParentDirPipe, pure: true }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ParentDirPipe, [{
@@ -118,7 +118,7 @@ class SafeDomPipe {
             default: throw new Error(`Invalid safe type specified: ${type}`);
         }
     }
-    /** @nocollapse */ static { this.ɵfac = function SafeDomPipe_Factory(t) { return new (t || SafeDomPipe)(i0.ɵɵdirectiveInject(i1.DomSanitizer, 16)); }; }
+    /** @nocollapse */ static { this.ɵfac = function SafeDomPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || SafeDomPipe)(i0.ɵɵdirectiveInject(i1.DomSanitizer, 16)); }; }
     /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "safeDom", type: SafeDomPipe, pure: true }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SafeDomPipe, [{
@@ -153,7 +153,7 @@ class SegmentsPipe {
         });
         return pp;
     }
-    /** @nocollapse */ static { this.ɵfac = function SegmentsPipe_Factory(t) { return new (t || SegmentsPipe)(); }; }
+    /** @nocollapse */ static { this.ɵfac = function SegmentsPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || SegmentsPipe)(); }; }
     /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "segments", type: SegmentsPipe, pure: true }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SegmentsPipe, [{
@@ -183,7 +183,7 @@ class UnrollArrayPipe {
             last: last
         };
     }
-    /** @nocollapse */ static { this.ɵfac = function UnrollArrayPipe_Factory(t) { return new (t || UnrollArrayPipe)(); }; }
+    /** @nocollapse */ static { this.ɵfac = function UnrollArrayPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || UnrollArrayPipe)(); }; }
     /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "unrollArray", type: UnrollArrayPipe, pure: true }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(UnrollArrayPipe, [{
@@ -201,7 +201,7 @@ class UnzipObjectPipe {
         }
         return keys;
     }
-    /** @nocollapse */ static { this.ɵfac = function UnzipObjectPipe_Factory(t) { return new (t || UnzipObjectPipe)(); }; }
+    /** @nocollapse */ static { this.ɵfac = function UnzipObjectPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || UnzipObjectPipe)(); }; }
     /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "unzipObject", type: UnzipObjectPipe, pure: true }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(UnzipObjectPipe, [{
@@ -219,7 +219,7 @@ class TrimStartPipe {
         }
         return (appendEllipsis ? '...' : '') + value.substring(value.length - maxLen, value.length - 1);
     }
-    /** @nocollapse */ static { this.ɵfac = function TrimStartPipe_Factory(t) { return new (t || TrimStartPipe)(); }; }
+    /** @nocollapse */ static { this.ɵfac = function TrimStartPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || TrimStartPipe)(); }; }
     /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "trimStart", type: TrimStartPipe, pure: true }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(TrimStartPipe, [{
@@ -239,7 +239,7 @@ class TrimEndPipe {
         }
         return value.substring(0, maxLen - 1) + (appendEllipsis ? '...' : '');
     }
-    /** @nocollapse */ static { this.ɵfac = function TrimEndPipe_Factory(t) { return new (t || TrimEndPipe)(); }; }
+    /** @nocollapse */ static { this.ɵfac = function TrimEndPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || TrimEndPipe)(); }; }
     /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "trimEnd", type: TrimEndPipe, pure: true }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(TrimEndPipe, [{
@@ -250,7 +250,7 @@ class TrimEndPipe {
     }], null, null); })();
 
 class PolpwareNgxPipesModule {
-    /** @nocollapse */ static { this.ɵfac = function PolpwareNgxPipesModule_Factory(t) { return new (t || PolpwareNgxPipesModule)(); }; }
+    /** @nocollapse */ static { this.ɵfac = function PolpwareNgxPipesModule_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || PolpwareNgxPipesModule)(); }; }
     /** @nocollapse */ static { this.ɵmod = /** @pureOrBreakMyCode */ i0.ɵɵdefineNgModule({ type: PolpwareNgxPipesModule }); }
     /** @nocollapse */ static { this.ɵinj = /** @pureOrBreakMyCode */ i0.ɵɵdefineInjector({ imports: [CommonModule] }); }
 }
