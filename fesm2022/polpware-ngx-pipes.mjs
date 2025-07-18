@@ -35,11 +35,14 @@ class FileSizePipe {
         return bytes.toFixed(+precision) + ' ' + this.units[unit];
     }
     /** @nocollapse */ static { this.ɵfac = function FileSizePipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || FileSizePipe)(); }; }
-    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "fileSize", type: FileSizePipe, pure: true }); }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "fileSize", type: FileSizePipe, pure: true, standalone: false }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(FileSizePipe, [{
         type: Pipe,
-        args: [{ name: 'fileSize' }]
+        args: [{
+                name: 'fileSize',
+                standalone: false
+            }]
     }], null, null); })();
 
 class ShortenFullpathPipe {
@@ -75,11 +78,14 @@ class ShortenFullpathPipe {
         }
     }
     /** @nocollapse */ static { this.ɵfac = function ShortenFullpathPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || ShortenFullpathPipe)(); }; }
-    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "shortenFullpath", type: ShortenFullpathPipe, pure: true }); }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "shortenFullpath", type: ShortenFullpathPipe, pure: true, standalone: false }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ShortenFullpathPipe, [{
         type: Pipe,
-        args: [{ name: 'shortenFullpath' }]
+        args: [{
+                name: 'shortenFullpath',
+                standalone: false
+            }]
     }], null, null); })();
 
 class ParentDirPipe {
@@ -97,11 +103,14 @@ class ParentDirPipe {
         }
     }
     /** @nocollapse */ static { this.ɵfac = function ParentDirPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || ParentDirPipe)(); }; }
-    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "parentDir", type: ParentDirPipe, pure: true }); }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "parentDir", type: ParentDirPipe, pure: true, standalone: false }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(ParentDirPipe, [{
         type: Pipe,
-        args: [{ name: 'parentDir' }]
+        args: [{
+                name: 'parentDir',
+                standalone: false
+            }]
     }], null, null); })();
 
 class SafeDomPipe {
@@ -119,12 +128,13 @@ class SafeDomPipe {
         }
     }
     /** @nocollapse */ static { this.ɵfac = function SafeDomPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || SafeDomPipe)(i0.ɵɵdirectiveInject(i1.DomSanitizer, 16)); }; }
-    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "safeDom", type: SafeDomPipe, pure: true }); }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "safeDom", type: SafeDomPipe, pure: true, standalone: false }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SafeDomPipe, [{
         type: Pipe,
         args: [{
-                name: 'safeDom'
+                name: 'safeDom',
+                standalone: false
             }]
     }], () => [{ type: i1.DomSanitizer }], null); })();
 
@@ -154,11 +164,14 @@ class SegmentsPipe {
         return pp;
     }
     /** @nocollapse */ static { this.ɵfac = function SegmentsPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || SegmentsPipe)(); }; }
-    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "segments", type: SegmentsPipe, pure: true }); }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "segments", type: SegmentsPipe, pure: true, standalone: false }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(SegmentsPipe, [{
         type: Pipe,
-        args: [{ name: 'segments' }]
+        args: [{
+                name: 'segments',
+                standalone: false
+            }]
     }], null, null); })();
 
 class UnrollArrayPipe {
@@ -184,11 +197,14 @@ class UnrollArrayPipe {
         };
     }
     /** @nocollapse */ static { this.ɵfac = function UnrollArrayPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || UnrollArrayPipe)(); }; }
-    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "unrollArray", type: UnrollArrayPipe, pure: true }); }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "unrollArray", type: UnrollArrayPipe, pure: true, standalone: false }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(UnrollArrayPipe, [{
         type: Pipe,
-        args: [{ name: 'unrollArray' }]
+        args: [{
+                name: 'unrollArray',
+                standalone: false
+            }]
     }], null, null); })();
 
 class UnzipObjectPipe {
@@ -202,11 +218,14 @@ class UnzipObjectPipe {
         return keys;
     }
     /** @nocollapse */ static { this.ɵfac = function UnzipObjectPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || UnzipObjectPipe)(); }; }
-    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "unzipObject", type: UnzipObjectPipe, pure: true }); }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "unzipObject", type: UnzipObjectPipe, pure: true, standalone: false }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(UnzipObjectPipe, [{
         type: Pipe,
-        args: [{ name: 'unzipObject' }]
+        args: [{
+                name: 'unzipObject',
+                standalone: false
+            }]
     }], null, null); })();
 
 class TrimStartPipe {
@@ -220,12 +239,13 @@ class TrimStartPipe {
         return (appendEllipsis ? '...' : '') + value.substring(value.length - maxLen, value.length - 1);
     }
     /** @nocollapse */ static { this.ɵfac = function TrimStartPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || TrimStartPipe)(); }; }
-    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "trimStart", type: TrimStartPipe, pure: true }); }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "trimStart", type: TrimStartPipe, pure: true, standalone: false }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(TrimStartPipe, [{
         type: Pipe,
         args: [{
-                name: 'trimStart'
+                name: 'trimStart',
+                standalone: false
             }]
     }], null, null); })();
 
@@ -240,12 +260,13 @@ class TrimEndPipe {
         return value.substring(0, maxLen - 1) + (appendEllipsis ? '...' : '');
     }
     /** @nocollapse */ static { this.ɵfac = function TrimEndPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || TrimEndPipe)(); }; }
-    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "trimEnd", type: TrimEndPipe, pure: true }); }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "trimEnd", type: TrimEndPipe, pure: true, standalone: false }); }
 }
 (() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(TrimEndPipe, [{
         type: Pipe,
         args: [{
-                name: 'trimEnd'
+                name: 'trimEnd',
+                standalone: false
             }]
     }], null, null); })();
 
