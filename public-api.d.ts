@@ -11,3 +11,4 @@ export * from "./lib/ngx-pipes.module";
 export * from "./lib/date/am-from-utc.pipe";
 export * from "./lib/date/am-local.pipe";
 export * from "./lib/date/am-time-ago.pipe";
+export * from "./lib/date/am-calendar.pipe";
