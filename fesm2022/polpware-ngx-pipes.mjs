@@ -2,6 +2,7 @@ import * as i0 from '@angular/core';
 import { Pipe, NgModule } from '@angular/core';
 import * as i1 from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { formatDistanceToNow, isValid, startOfToday, differenceInCalendarDays, isToday, format, isYesterday, isTomorrow } from 'date-fns';
 
 /*
  * Convert bytes into largest possible unit.
@@ -323,6 +324,189 @@ class PolpwareNgxPipesModule {
         TrimEndPipe,
         TrimStartPipe] }); })();
 
+class AmFromUtcPipe {
+    transform(value) {
+        if (!value) {
+            return null;
+        }
+        // If it's already a Date object, return it as is.
+        if (value instanceof Date) {
+            return value;
+        }
+        const dateString = String(value);
+        // If the string already specifies a timezone (like 'Z' or '+00:00'),
+        // new Date() will correctly parse it as UTC.
+        if (dateString.endsWith('Z') || dateString.includes('+')) {
+            return new Date(dateString);
+        }
+        // Otherwise, append 'Z' to treat the string as UTC.
+        return new Date(`${dateString}Z`);
+    }
+    /** @nocollapse */ static { this.ɵfac = function AmFromUtcPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || AmFromUtcPipe)(); }; }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "amFromUtc", type: AmFromUtcPipe, pure: true }); }
+}
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AmFromUtcPipe, [{
+        type: Pipe,
+        args: [{
+                name: 'amFromUtc',
+                standalone: true,
+            }]
+    }], null, null); })();
+
+class AmLocalPipe {
+    transform(value) {
+        if (!value) {
+            return null;
+        }
+        // Creating a new Date object from the input value ensures that
+        // subsequent formatting will use the browser's local timezone.
+        try {
+            return new Date(value);
+        }
+        catch (e) {
+            console.error(`Invalid date value provided to amLocal pipe: ${value}`);
+            return null;
+        }
+    }
+    /** @nocollapse */ static { this.ɵfac = function AmLocalPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || AmLocalPipe)(); }; }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "amLocal", type: AmLocalPipe, pure: true }); }
+}
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AmLocalPipe, [{
+        type: Pipe,
+        args: [{
+                name: 'amLocal',
+                standalone: true,
+            }]
+    }], null, null); })();
+
+class AmTimeAgoPipe {
+    constructor(changeDetector, ngZone) {
+        this.changeDetector = changeDetector;
+        this.ngZone = ngZone;
+        this.timer = null;
+        this.lastValue = null;
+        this.lastResult = '';
+    }
+    transform(value) {
+        if (value !== this.lastValue) {
+            this.lastValue = value;
+            this.removeTimer();
+            this.setupTimer();
+            this.lastResult = this.calculateValue(value);
+        }
+        return this.lastResult;
+    }
+    ngOnDestroy() {
+        this.removeTimer();
+    }
+    calculateValue(value) {
+        if (!value) {
+            return '';
+        }
+        try {
+            const date = new Date(value);
+            return formatDistanceToNow(date, { addSuffix: true });
+        }
+        catch (e) {
+            console.error(`Invalid date value provided to amTimeAgo pipe: ${value}`);
+            return '';
+        }
+    }
+    setupTimer() {
+        // Run the timer outside of Angular's zone to prevent unnecessary change detection cycles
+        this.ngZone.runOutsideAngular(() => {
+            // Refresh every 30 seconds
+            this.timer = window.setInterval(() => {
+                // Run back inside Angular's zone to update the view
+                this.ngZone.run(() => {
+                    this.lastResult = this.calculateValue(this.lastValue);
+                    this.changeDetector.markForCheck();
+                });
+            }, 30000);
+        });
+    }
+    removeTimer() {
+        if (this.timer) {
+            window.clearInterval(this.timer);
+            this.timer = null;
+        }
+    }
+    /** @nocollapse */ static { this.ɵfac = function AmTimeAgoPipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || AmTimeAgoPipe)(i0.ɵɵdirectiveInject(i0.ChangeDetectorRef, 16), i0.ɵɵdirectiveInject(i0.NgZone, 16)); }; }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "amTimeAgo", type: AmTimeAgoPipe, pure: false }); }
+}
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(AmTimeAgoPipe, [{
+        type: Pipe,
+        args: [{
+                name: 'amTimeAgo',
+                standalone: true,
+                // Make the pipe impure so it can be re-evaluated on changes other than its input
+                pure: false,
+            }]
+    }], () => [{ type: i0.ChangeDetectorRef }, { type: i0.NgZone }], null); })();
+
+/**
+ * A pipe that formats a date with calendar-like, relative time strings,
+ * similar to the `amCalendar` pipe from `ngx-moment`, but using `date-fns`.
+ *
+ * @usage
+ * `{{ myDate | amCalendar }}`
+ *
+ * @example
+ * // If today is 2025-09-29
+ * '2025-09-29T14:00:00' | amCalendar -> 'Today at 2:00 PM'
+ * '2025-09-28T10:00:00' | amCalendar -> 'Yesterday at 10:00 AM'
+ * '2025-09-30T09:00:00' | amCalendar -> 'Tomorrow at 9:00 AM'
+ * '2025-10-02T11:00:00' | amCalendar -> 'Thursday at 11:00 AM'
+ * '2025-09-25T11:00:00' | amCalendar -> 'Last Thursday at 11:00 AM'
+ * '2025-01-01T12:00:00' | amCalendar -> '01/01/2025'
+ */
+class CalendarDatePipe {
+    transform(value) {
+        if (value === null || value === undefined) {
+            return '';
+        }
+        const date = new Date(value);
+        if (!isValid(date)) {
+            console.warn(`amCalendar: Received an invalid date value: ${value}`);
+            return ''; // Return empty string for invalid dates
+        }
+        const now = startOfToday();
+        const dayDiff = differenceInCalendarDays(date, now);
+        // Using `isToday`, `isYesterday`, and `isTomorrow` is also a very
+        // readable alternative for these specific checks.
+        if (isToday(date)) {
+            return `Today at ${format(date, 'p')}`;
+        }
+        if (isYesterday(date)) {
+            return `Yesterday at ${format(date, 'p')}`;
+        }
+        if (isTomorrow(date)) {
+            return `Tomorrow at ${format(date, 'p')}`;
+        }
+        // For dates within the next week (but not tomorrow)
+        if (dayDiff > 1 && dayDiff < 7) {
+            // e.g., 'Tuesday at 10:04 PM'
+            return format(date, "eeee 'at' p");
+        }
+        // For dates within the last week (but not yesterday)
+        if (dayDiff < -1 && dayDiff > -7) {
+            // e.g., 'Last Monday at 10:04 PM'
+            return `Last ${format(date, "eeee 'at' p")}`;
+        }
+        // For all other dates, return a standard short date format
+        return format(date, 'P'); // e.g., '09/29/2025'
+    }
+    /** @nocollapse */ static { this.ɵfac = function CalendarDatePipe_Factory(__ngFactoryType__) { return new (__ngFactoryType__ || CalendarDatePipe)(); }; }
+    /** @nocollapse */ static { this.ɵpipe = /** @pureOrBreakMyCode */ i0.ɵɵdefinePipe({ name: "amCalendar", type: CalendarDatePipe, pure: true }); }
+}
+(() => { (typeof ngDevMode === "undefined" || ngDevMode) && i0.ɵsetClassMetadata(CalendarDatePipe, [{
+        type: Pipe,
+        args: [{
+                name: 'amCalendar',
+                standalone: true
+            }]
+    }], null, null); })();
+
 /*
  * Public API Surface of ngx-pipes
  */
@@ -331,5 +515,5 @@ class PolpwareNgxPipesModule {
  * Generated bundle index. Do not edit.
  */
 
-export { FileSizePipe, ParentDirPipe, PolpwareNgxPipesModule, SafeDomPipe, SegmentsPipe, ShortenFullpathPipe, TrimEndPipe, TrimStartPipe, UnrollArrayPipe, UnzipObjectPipe };
+export { AmFromUtcPipe, AmLocalPipe, AmTimeAgoPipe, CalendarDatePipe, FileSizePipe, ParentDirPipe, PolpwareNgxPipesModule, SafeDomPipe, SegmentsPipe, ShortenFullpathPipe, TrimEndPipe, TrimStartPipe, UnrollArrayPipe, UnzipObjectPipe };
 //# sourceMappingURL=polpware-ngx-pipes.mjs.map

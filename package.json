@@ -1,12 +1,13 @@
 {
   "name": "@polpware/ngx-pipes",
-  "version": "19.0.0",
+  "version": "19.5.0",
   "dependencies": {
     "tslib": "^2.3.0"
   },
   "peerDependencies": {
     "@angular/common": "^19.0.0",
-    "@angular/core": "^19.0.0"
+    "@angular/core": "^19.0.0",
+    "date-fns": "^4.1.0"
   },
   "module": "fesm2022/polpware-ngx-pipes.mjs",
   "typings": "types/polpware-ngx-pipes.d.ts",
